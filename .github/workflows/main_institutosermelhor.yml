@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: /home/runner/work/target/*.jar
+          path: /home/runner/work/target/*.class
 
   deploy:
     runs-on: ubuntu-latest
