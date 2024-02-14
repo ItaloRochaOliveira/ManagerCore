@@ -25,7 +25,7 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: java-app
           path: 'ManagerCore/target/*.jar'
@@ -41,7 +41,7 @@ jobs:
   
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: java-app
       
