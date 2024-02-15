@@ -36,7 +36,7 @@ public class UserController {
   }
   
   @GetMapping
-  public String getUsers(){
+  public ResponseEntity<String> getUsers(){
     return ResponseEntity.status(HttpStatus.OK).body("worked");
   }
   // public ResponseEntity<List<UserDto>> getUsers() {
