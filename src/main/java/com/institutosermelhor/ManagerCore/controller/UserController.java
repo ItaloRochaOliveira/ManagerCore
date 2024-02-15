@@ -29,10 +29,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
   UserService service;
-@@ -34,15 +34,18 @@ public class UserController {
+
+  @Autowired
   public UserController(UserService service) {
-    this.service = service;
-  }
+      this.service = service;
+    }
 
   
   @GetMapping
