@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/users")
 @Tag(name = "Users")
-// @SecurityRequirement(name = "bearerAuth")
 public class UserController {
 
   UserService service;
@@ -39,14 +38,7 @@ public class UserController {
   public ResponseEntity<String> getUsers(){
     return ResponseEntity.status(HttpStatus.OK).body("worked");
   }
-  // public ResponseEntity<List<UserDto>> getUsers() {
-  //   List<User> users = service.getUsers();
-  //   List<UserDto> usersDto = users.stream()
-  //       .map(user -> new UserDto(user.getId(), user.getName(), user.getEmail(), user.getRole()))
-  //       .toList();
-  //   return ResponseEntity.status(HttpStatus.OK).body(usersDto);
-  // }
-
+  
   @GetMapping("/{id}")
   public ResponseEntity<UserDto> getUser(@PathVariable String id) {
     User user = service.findById(id);
