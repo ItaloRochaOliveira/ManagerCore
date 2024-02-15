@@ -27,8 +27,8 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: java-app
-          path: /**/target/*.jar
+          name: ManagerCore
+          path: /ManagerCore/target/*.jar
 
   deploy:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
       # - name: Display structure of downloaded files
         # run: ls -R
         with:
-          name: java-app
+          name: ManagerCore
       
       - name: Login to Azure
         uses: azure/login@v1
