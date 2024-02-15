@@ -25,17 +25,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/users")
 @Tag(name = "Users")
-// @SecurityRequirement(name = "bearerAuth")
+@SecurityRequirement(name = "bearerAuth")
 public class UserController {
 
   UserService service;
 
   @Autowired
   public UserController(UserService service) {
-      this.service = service;
-    }
+    this.service = service;
+  }
 
-  
   @GetMapping
   public ResponseEntity<List<UserDto>> getUsers() {
     List<User> users = service.getUsers();
@@ -46,10 +45,10 @@ public class UserController {
   }
 
   @GetMapping("/test")
-   public ResponseEntity<String> getUsers(){
-    return ResponseEntity.status(HttpStatus.OK).body("worked");
+  public ResponseEntity<String> getUsersTest() {
+    return ResponseEntity.status(HttpStatus.OK).body("Worked");
   }
-  
+
   @GetMapping("/{id}")
   public ResponseEntity<UserDto> getUser(@PathVariable String id) {
     User user = service.findById(id);
