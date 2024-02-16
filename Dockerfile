@@ -6,5 +6,5 @@ RUN ./mvnw clean package
 FROM eclipse-temurin:17-jre-jammy
 COPY --from=build-image /app/target/*.jar /app/app.jar
 
-EXPOSE 10255
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
